@@ -2,7 +2,6 @@ package com.endava.internship.mocking.service;
 
 import static java.util.Objects.isNull;
 
-import java.util.Objects;
 import java.util.UUID;
 
 import com.endava.internship.mocking.model.Status;
