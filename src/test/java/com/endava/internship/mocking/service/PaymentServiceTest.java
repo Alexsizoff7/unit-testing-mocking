@@ -81,11 +81,11 @@ class PaymentServiceTest {
         assertThrows(NoSuchElementException.class, () -> paymentServiceWithMocks.createPayment(7, 55.5));
     }
 
-//    @Test
-//    void createPayment_throwsExceptionIfValidateUserIdThrowsException() {
-//        doThrow(new IllegalArgumentException()).when(validationServiceMock).validateUserId(any());
-//        assertThrows(IllegalArgumentException.class, () -> paymentServiceWithMocks.createPayment(any(), any()));
-//    }
+    @Test
+    void createPayment_invalidUserId_ThrowsIllegalArgumentException() {
+        doThrow(new IllegalArgumentException()).when(validationServiceMock).validateUserId(any());
+        assertThrows(IllegalArgumentException.class, () -> paymentServiceWithMocks.createPayment(null, 55d));
+    }
 
     @Test
     void editMessage() {
